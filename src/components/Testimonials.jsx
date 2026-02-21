@@ -1,6 +1,7 @@
 import React from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Pagination, Autoplay } from 'swiper/modules'
+import { motion } from 'framer-motion'
 
 // Import Swiper styles
 import 'swiper/css'
@@ -31,7 +32,13 @@ const Testimonials = () => {
   return (
     <section className="bg-white py-24 sm:py-32 relative overflow-hidden">
       {/* Background Line Art - Dish/Pan Sketch Left */}
-      <div className="absolute top-0 -left-20 w-[500px] h-[500px] opacity-[0.03] pointer-events-none select-none -rotate-12 group">
+      <motion.div 
+        initial={{ opacity: 0, x: -100, rotate: -30 }}
+        whileInView={{ opacity: 0.03, x: 0, rotate: -12 }}
+        viewport={{ once: true }}
+        transition={{ duration: 1.5 }}
+        className="absolute top-0 -left-20 w-[500px] h-[500px] pointer-events-none select-none group"
+      >
         <svg viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full text-slate-900">
            {/* Detailed Pan Sketch */}
            <circle cx="250" cy="250" r="180" stroke="currentColor" strokeWidth="4" />
@@ -41,25 +48,42 @@ const Testimonials = () => {
            <circle cx="300" cy="220" r="25" stroke="currentColor" strokeWidth="2" />
            <path d="M220 320 Q 250 280 280 320" stroke="currentColor" strokeWidth="2" fill="none" />
         </svg>
-      </div>
+      </motion.div>
 
       {/* Background Line Art - Herbal/Ingredients Top Right */}
-      <div className="absolute -top-20 -right-20 w-80 h-80 opacity-[0.04] pointer-events-none select-none rotate-45">
+      <motion.div 
+        initial={{ opacity: 0, scale: 0.5, rotate: 90 }}
+        whileInView={{ opacity: 0.04, scale: 1, rotate: 45 }}
+        viewport={{ once: true }}
+        transition={{ duration: 1.5 }}
+        className="absolute -top-20 -right-20 w-80 h-80 pointer-events-none select-none"
+      >
         <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full text-slate-900">
           <path d="M100 20 Q 120 60 100 100 T 100 180" stroke="currentColor" strokeWidth="2" />
           <path d="M100 60 Q 60 40 20 60" stroke="currentColor" strokeWidth="2" />
           <path d="M100 100 Q 140 80 180 100" stroke="currentColor" strokeWidth="2" />
           <path d="M100 140 Q 60 120 20 140" stroke="currentColor" strokeWidth="2" />
         </svg>
-      </div>
+      </motion.div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-        <h2 className="text-slate-900 text-5xl md:text-6xl font-normal leading-tight mb-6">
+        <motion.h2 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-slate-900 text-5xl md:text-6xl font-normal leading-tight mb-6"
+        >
           Our Happy Customers
-        </h2>
-        <p className="text-slate-500 text-lg max-w-2xl mx-auto mb-16 opacity-80 leading-relaxed">
+        </motion.h2>
+        <motion.p 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.2 }}
+          className="text-slate-500 text-lg max-w-2xl mx-auto mb-16 opacity-80 leading-relaxed"
+        >
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-        </p>
+        </motion.p>
 
         <Swiper
           modules={[Pagination, Autoplay]}
@@ -80,7 +104,13 @@ const Testimonials = () => {
         >
           {testimonialData.map((item, index) => (
             <SwiperSlide key={index}>
-              <div className="max-w-3xl mx-auto relative mt-20">
+              <motion.div 
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                className="max-w-3xl mx-auto relative mt-20"
+              >
                 {/* Testimonial Card */}
                 <div className="bg-[#FBFBFB] rounded-[50px] pt-24 pb-16 px-10 sm:px-20 border border-slate-50 shadow-sm relative transition-all duration-500 hover:shadow-xl hover:shadow-slate-100">
                   {/* Floating Avatar */}
@@ -101,7 +131,7 @@ const Testimonials = () => {
                     <p className="text-slate-400 text-sm font-medium uppercase tracking-widest mt-2">{item.role}</p>
                   </div>
                 </div>
-              </div>
+              </motion.div>
             </SwiperSlide>
           ))}
         </Swiper>
@@ -109,5 +139,6 @@ const Testimonials = () => {
     </section>
   )
 }
+
 
 export default Testimonials
