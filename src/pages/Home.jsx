@@ -9,7 +9,9 @@ import Testimonials from '../components/Testimonials'
 const Home = () => {
   return (
     <MainLayout>
-      <Hero />
+      <div id="hero">
+        <Hero />
+      </div>
       
       {/* Quick Features Section */}
       <section className="bg-slate-50 py-24 border-b border-slate-100">
@@ -34,8 +36,12 @@ const Home = () => {
         </div>
       </section>
 
-      <MexicanCuisine />
-      <Specialities />
+      <div id="our-story">
+        <MexicanCuisine />
+      </div>
+      <div id="menu">
+        <Specialities />
+      </div>
       <OrderNowBanner />
       <Testimonials />
     </MainLayout>

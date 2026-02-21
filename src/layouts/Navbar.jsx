@@ -40,12 +40,12 @@ const Navbar = () => {
             
             <div className="hidden md:block">
               <div className="flex items-center gap-10">
-                <a href="#" className="text-white text-sm font-bold uppercase tracking-widest hover:text-orange-500 transition-colors">Home</a>
-                <a href="#" className="text-white text-sm font-bold uppercase tracking-widest hover:text-orange-500 transition-colors">Our Menu</a>
-                <a href="#" className="text-white text-sm font-bold uppercase tracking-widest hover:text-orange-500 transition-colors">Specialities</a>
-                <a href="#" className="text-white text-sm font-bold uppercase tracking-widest hover:text-orange-500 transition-colors">Gallery</a>
-                <a href="#" className="text-white text-sm font-bold uppercase tracking-widest hover:text-orange-500 transition-colors">Contact</a>
-                <a href="#" className="bg-white text-black px-8 py-3 rounded-full text-sm font-black uppercase tracking-widest flex items-center gap-2 hover:bg-orange-500 hover:text-white transition-all transform active:scale-95 shadow-lg shadow-white/5">
+                <a href="#hero" className="text-white text-sm font-bold uppercase tracking-widest hover:text-orange-500 transition-colors">Home</a>
+                <a href="#our-story" className="text-white text-sm font-bold uppercase tracking-widest hover:text-orange-500 transition-colors">Our Story</a>
+                <a href="#menu" className="text-white text-sm font-bold uppercase tracking-widest hover:text-orange-500 transition-colors">Our Menu</a>
+                <a href="#menu" className="text-white text-sm font-bold uppercase tracking-widest hover:text-orange-500 transition-colors">Specialities</a>
+                <a href="#hero" className="text-white text-sm font-bold uppercase tracking-widest hover:text-orange-500 transition-colors">Contact</a>
+                <a href="#menu" className="bg-white text-black px-8 py-3 rounded-full text-sm font-black uppercase tracking-widest flex items-center gap-2 hover:bg-orange-500 hover:text-white transition-all transform active:scale-95 shadow-lg shadow-white/5">
                   Order Now <ArrowRight size={16} />
                 </a>
               </div>
